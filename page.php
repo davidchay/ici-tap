@@ -17,7 +17,39 @@ get_header();
 
 $container = get_theme_mod( 'understrap_container_type' );
 
+$post_slug = ucwords(str_replace('-',' ',get_post_field( 'post_name' )));
+
+$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'page-thumbnail'); 
+if(!$featured_img_url){
+ $featured_img_url = get_template_directory_uri() . "/img/blog.jpg";	
+}
 ?>
+
+<div class="home" >
+	<div class="home_background parallax-window" data-parallax="scroll" data-image-src="<?php echo $featured_img_url; ?>" data-speed="0.5"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<div class="home_container">
+					<div class="home_content d-flex flex-row align-items-center justify-content-start">
+						<div class="home_title">
+							<?php echo $post_slug; ?>
+						</div>
+						<div class="home_breadcrumbs ml-auto">
+							<?php 
+								if ( function_exists('yoast_breadcrumb') ) {
+									yoast_breadcrumb('<p class="breadcrumbs">','</p>');
+								} 
+							?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
 
 <div class="wrapper" id="page-wrapper">
 
@@ -26,7 +58,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<div class="row">
 
 			<!-- Do the left sidebar check -->
-			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
+			<?php //get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
 			<main class="site-main" id="main">
 
@@ -46,7 +78,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			</main><!-- #main -->
 
 			<!-- Do the right sidebar check -->
-			<?php get_template_part( 'global-templates/right-sidebar-check' ); ?>
+			<?php //get_template_part( 'global-templates/right-sidebar-check' ); ?>
 
 		</div><!-- .row -->
 

@@ -64,6 +64,8 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 		 * Adding Thumbnail basic support
 		 */
 		add_theme_support( 'post-thumbnails' );
+		set_post_thumbnail_size( 852, 332, true );
+		add_image_size( 'page-thumbnail', 1912, 502 );
 
 		/*
 		 * Adding support for Widget edit icons in customizer

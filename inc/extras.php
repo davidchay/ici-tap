@@ -148,3 +148,21 @@ if ( ! function_exists( 'understrap_default_body_attributes' ) ) {
 	}
 }
 add_filter( 'understrap_body_attributes', 'understrap_default_body_attributes' );
+
+
+
+function your_prefix_get_meta_box( $meta_boxes ) {
+	$prefix = 'prefix-';
+
+	$meta_boxes[] = array(
+		'id' => 'untitled',
+		'title' => esc_html__( 'Untitled Metabox', 'metabox-online-generator' ),
+		'post_types' => array('post', 'page' ),
+		'context' => 'advanced',
+		'priority' => 'default',
+		'autosave' => 'false',
+	);
+
+	return $meta_boxes;
+}
+add_filter( 'rwmb_meta_boxes', 'your_prefix_get_meta_box' );
