@@ -70,7 +70,7 @@ if ( ! function_exists( 'understrap_pagination' ) ) {
 			<h2 id="posts-nav-label" class="sr-only">
 				<?php echo esc_html( $args['screen_reader_text'] ); ?>
 			</h2>
-
+			<div class="blog_pages">
 			<ul class="<?php echo esc_attr( $class ); ?>">
 
 				<?php
@@ -84,7 +84,7 @@ if ( ! function_exists( 'understrap_pagination' ) ) {
 				?>
 
 			</ul>
-
+			</div>	
 		</nav>
 
 		<?php

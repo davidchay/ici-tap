@@ -65,7 +65,13 @@ if ( ! function_exists( 'understrap_setup' ) ) {
 		 */
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 852, 332, true );
-		add_image_size( 'page-thumbnail', 1912, 502 );
+		function wpse_setup_theme() {
+			add_theme_support( 'post-thumbnails' );
+			add_image_size( 'page-thumbnail', 1912, 502 );
+			add_image_size( 'blog-thumbnail', 852, 332, true );
+		 }
+		  
+		 add_action( 'after_setup_theme', 'wpse_setup_theme' );	
 
 		/*
 		 * Adding support for Widget edit icons in customizer
@@ -133,8 +139,8 @@ if ( ! function_exists( 'understrap_all_excerpts_get_more_link' ) ) {
 	 */
 	function understrap_all_excerpts_get_more_link( $post_excerpt ) {
 		if ( ! is_admin() ) {
-			$post_excerpt = $post_excerpt . ' [...]<p><a class="btn btn-secondary understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read More...',
-			'understrap' ) . '</a></p>';
+			$post_excerpt = $post_excerpt . ' <div class="blog_link"><a class="understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Leer más...',
+			'understrap' ) . '</a></div>';
 		}
 		return $post_excerpt;
 	}
