@@ -25,8 +25,8 @@ jQuery(function ($) {
 	var header = $('.header');
 	var hamb = $('.hamburger');
 	var menuActive = false;
-	var menu = $('.menu');
-
+	var menu = $('.menu_float');
+	
 	setHeader();
 
 	$(window).on('resize', function()
@@ -96,12 +96,15 @@ jQuery(function ($) {
 			{
 				hamb.on('click', function()
 				{
+					console.log("click en hambuir");
 					if(menuActive)
 					{
+						console.log("entra a closemenu");
 						closeMenu();
 					}
 					else
 					{
+						console.log('entra a open menu')
 						openMenu();
 					}
 				});	

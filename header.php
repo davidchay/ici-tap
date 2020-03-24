@@ -197,7 +197,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <!-- Menu -->
 
-<div class="menu d-flex flex-column align-items-center justify-content-center">
+<div class="menu_float d-flex flex-column align-items-center justify-content-center">
 		<div class="menu_content">
 			<div class="cross_1 d-flex flex-column align-items-center justify-content-center">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/logo-white.png" alt="">

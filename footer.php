@@ -15,7 +15,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
 
-<div class="wrapper" id="wrapper-footer">
+<footer class="footer footer-copy" id="wrapper-footer">
 
 	<div class="<?php echo esc_attr( $container ); ?>">
 
@@ -27,7 +27,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="site-info">
 
-						<?php understrap_site_info(); ?>
+						<?php //understrap_site_info(); ?>
 
 					</div><!-- .site-info -->
 
@@ -39,9 +39,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	</div><!-- container end -->
 
+		<!-- Copyright -->
+		<div class="copyright text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		Copyright &copy; <?php date(Y); ?> Todos los derechos reservados. <?php echo get_bloginfo( 'name' ) ?> | Este sitio fue creado con <i class="fa fa-heart-o" aria-hidden="true"></i> por <a href="https://codipix.com" targer="_blank">codipix</a>
+		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+		</div><!-- /copyright -->
+</footer><!-- #page we need this extra closing tag here -->
+	
 </div><!-- wrapper end -->
 
-</div><!-- #page we need this extra closing tag here -->
 
 <?php wp_footer(); ?>
 
